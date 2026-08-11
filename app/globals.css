@@ -1,0 +1,128 @@
+@import "tailwindcss";
+
+:root { --ink:#172033; --muted:#64748b; --paper:#f6f9ff; --orange:#2563eb; --line:#dbe6f4; --blue:#2563eb; --blue-soft:#eaf2ff; --navy:#0f1f3d; }
+* { box-sizing:border-box; }
+html { scroll-behavior:smooth; }
+body { margin:0; background:var(--paper); color:var(--ink); font-family:"Yu Gothic UI","Hiragino Kaku Gothic ProN",sans-serif; }
+button,input,select { font:inherit; }
+button { cursor:pointer; }
+.app-shell { min-height:100vh; display:grid; grid-template-columns:245px minmax(0,1fr); }
+.sidebar { position:fixed; inset:0 auto 0 0; width:245px; background:#102346; color:#f8fbff; padding:30px 22px; display:flex; flex-direction:column; }
+.brand { font-family:Georgia,serif; font-size:23px; letter-spacing:.5px; padding:0 10px 30px; }
+.brand span { display:inline-grid; place-items:center; width:32px; height:32px; border-radius:50%; color:#fff; background:#3b82f6; margin-right:7px; }
+nav { display:grid; gap:7px; }
+nav button { width:100%; border:0; text-align:left; background:transparent; color:#bdb9b0; text-decoration:none; padding:12px 14px; border-radius:9px; font-size:14px; }
+nav button span { display:inline-block; width:24px; font-size:17px; }
+nav button:hover,nav button.active { background:#1e3a68; color:white; }
+.job-list { border-top:1px solid #45433e; margin-top:28px; padding-top:20px; }
+.job-list>p { color:#8f8b82; font-size:11px; text-transform:uppercase; letter-spacing:1px; margin:0 0 12px 12px; }
+.job-list>div { display:grid; grid-template-columns:10px 1fr; align-items:center; gap:9px; padding:9px 12px; font-size:12px; }
+.job-list i { width:8px; height:8px; border-radius:50%; }
+.job-list small { grid-column:2; color:#8f8b82; margin-top:-5px; }
+.side-account { margin-top:auto; border-top:1px solid #45433e; padding:18px 4px 0; display:grid; grid-template-columns:34px 1fr 20px; gap:9px; align-items:center; }
+.side-account>span { width:34px; height:34px; border-radius:50%; display:grid; place-items:center; background:#3b82f6; color:#fff; font:bold 15px Georgia,serif; }
+.side-account strong,.side-account small { display:block; max-width:125px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }.side-account strong { font-size:11px; }.side-account small { color:#8f8b82; font-size:8px; margin-top:3px; }.side-account>a { color:#a9a59c; text-decoration:none; font-size:18px; }
+.content { grid-column:2; width:min(1160px,calc(100% - 64px)); margin:0 auto; padding:48px 0 72px; }
+header { display:flex; justify-content:space-between; align-items:center; margin-bottom:30px; }
+.eyebrow { color:var(--orange)!important; font-size:11px!important; font-weight:700; letter-spacing:1.3px; text-transform:uppercase; margin:0 0 7px!important; }
+header h1 { font-family:Georgia,"Yu Mincho",serif; font-size:32px; margin:0 0 8px; letter-spacing:.5px; }
+header p { color:var(--muted); margin:0; font-size:13px; }
+.primary { border:0; background:var(--blue); color:#fff; border-radius:8px; padding:12px 20px; font-weight:700; box-shadow:0 7px 16px #2563eb25; }
+.primary:hover { background:#1d4ed8; transform:translateY(-1px); }
+.hero-card { min-height:190px; border-radius:12px; padding:30px 36px; display:grid; grid-template-columns:1fr 150px 200px; align-items:center; color:white; background:linear-gradient(118deg,#1e40af,#0f1f3d); box-shadow:0 12px 30px #2563eb18; }
+.hero-card p { color:#c7c3ba; font-size:13px; margin:0 0 10px; }
+.hero-card>div:first-child>strong { display:block; font:42px Georgia,serif; letter-spacing:1px; margin-bottom:12px; }
+.hero-card>div:first-child>span { color:#a9a59c; font-size:12px; }
+.hero-card b { color:#bfdbfe; }
+.progress-ring { width:110px; height:110px; border-radius:50%; display:grid; place-items:center; background:conic-gradient(#93c5fd var(--progress),#31517e 0); position:relative; }
+.progress-ring::before { content:""; position:absolute; width:84px; height:84px; border-radius:50%; background:#15305f; }
+.progress-ring span { position:relative; font:29px Georgia,serif; }
+.progress-ring small { font-size:12px; }
+.hero-detail { border-left:1px solid #545149; padding-left:30px; display:grid; }
+.hero-detail span { color:#c8c3ba; font-size:12px; }
+.hero-detail strong { color:#bfdbfe; font:26px Georgia,serif; margin:5px 0; }
+.hero-detail small { color:#858178; }
+.metrics { display:grid; grid-template-columns:repeat(3,1fr); gap:15px; margin:18px 0; }
+.metrics article { background:#fff; border:1px solid var(--line); border-radius:12px; padding:20px; display:flex; gap:15px; align-items:center; }
+.metric-icon { width:44px; height:44px; display:grid; place-items:center; border-radius:10px; font-weight:800; }
+.metric-icon.orange { background:#fff7ed; color:#c2410c; }.metric-icon.green { background:#ecfdf5;color:#047857; }.metric-icon.blue { background:#eaf2ff;color:#1d4ed8; }
+.metrics p { margin:0 0 3px; color:var(--muted); font-size:12px; }.metrics strong { font:23px Georgia,serif; }.metrics em { font:normal 12px sans-serif; margin-left:3px; }.metrics small { display:block; color:#aaa69e; font-size:10px; margin-top:4px; }
+.panel { background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+.panel-head { display:flex; justify-content:space-between; align-items:end; padding:22px 24px 17px; }
+.panel h2 { margin:0 0 5px; font:21px Georgia,"Yu Mincho",serif; }.panel-head p { margin:0; color:var(--muted); font-size:11px; }
+.filters { background:#f5f3ef; border-radius:8px; padding:3px; display:flex; gap:2px; }.filters button { border:0; background:transparent; color:#858078; padding:7px 12px; border-radius:6px; font-size:11px; }.filters button.selected { background:#fff; color:var(--ink); box-shadow:0 2px 8px #2d2a2511; }
+.table-wrap { overflow-x:auto; } table { width:100%; border-collapse:collapse; font-size:12px; } th { text-align:left; color:#969088; background:#faf9f6; padding:10px 16px; font-size:10px; font-weight:600; border-top:1px solid var(--line); border-bottom:1px solid var(--line); } td { padding:14px 16px; border-bottom:1px solid #efede8; white-space:nowrap; } tbody tr:last-child td { border-bottom:0; } tbody tr:hover { background:#fcfbf8; }
+.job-cell { display:flex; align-items:center; gap:11px; min-width:210px; }.job-cell i { width:7px; height:34px; border-radius:4px; }.job-cell strong { display:block; font-size:12px; }.job-cell small { display:block; max-width:260px; overflow:hidden; text-overflow:ellipsis; color:#99948c; font-size:10px; margin-top:3px; }.actual { font-weight:700; }.method { color:#67635d; }.status { border-radius:20px; padding:5px 9px; font-size:10px; }.status.paid { background:#eaf6f1;color:#267859; }.status.pending { background:#fff1df;color:#b66f20; }.receive { border:1px solid #df8a64; color:#d7653e; background:white; border-radius:6px; padding:5px 8px; font-size:10px; }
+.modal-backdrop { position:fixed; z-index:10; inset:0; display:grid; place-items:center; padding:20px; background:#171713aa; backdrop-filter:blur(3px); }
+.modal { width:min(590px,100%); background:#fff; border-radius:16px; padding:28px; box-shadow:0 24px 80px #0005; max-height:95vh; overflow:auto; animation:appear .18s ease-out; }
+@keyframes appear { from { opacity:0; transform:translateY(12px) scale(.98); } }
+.modal-head { display:flex; justify-content:space-between; align-items:start; margin-bottom:23px; }.modal-head h2 { font:27px Georgia,"Yu Mincho",serif; margin:0; }.modal-head>button { border:0; background:#f4f1ec; color:#777; border-radius:50%; width:32px; height:32px; font-size:20px; }
+.form-grid { display:grid; grid-template-columns:1fr 1fr; gap:16px; }.field { display:grid; gap:7px; }.field.full { margin-bottom:16px; }.field span { font-size:11px; font-weight:700; color:#5f5b55; }.field input,.field select { width:100%; border:1px solid #ddd9d2; border-radius:8px; background:#fff; padding:11px 12px; outline:none; color:#2c2a26; }.field input:focus,.field select:focus { border-color:#2563eb; box-shadow:0 0 0 3px #2563eb16; }.field input:disabled { background:#f1efeb; }.prefix,.suffix { position:relative; }.prefix span { position:absolute; left:12px; top:11px; color:#918c84; }.prefix input { padding-left:30px; }.suffix span { position:absolute; right:12px; top:11px; color:#918c84; font-size:12px; }.suffix input { padding-right:45px; }
+.modal .field.full:last-of-type { margin-top:16px; }.modal-actions { display:flex; justify-content:flex-end; gap:10px; margin-top:25px; padding-top:18px; border-top:1px solid var(--line); }.ghost { border:1px solid #ddd9d2; background:#fff; border-radius:8px; padding:11px 18px; color:#6f6a63; }
+.source-badge,.sync-status { display:inline-flex; align-items:center; gap:7px; background:#f2f0eb; color:#777168; border-radius:20px; padding:7px 11px; font-size:10px; font-weight:700; }
+.sync-status i { width:7px; height:7px; border-radius:50%; background:#31a37c; box-shadow:0 0 0 4px #31a37c20; }
+.month-bars { padding:4px 25px 24px; display:grid; gap:12px; }.month-row { display:grid; grid-template-columns:35px 1fr 90px; gap:13px; align-items:center; font-size:11px; }.month-row>div { height:8px; background:#efede8; border-radius:8px; overflow:hidden; }.month-row i { display:block; height:100%; background:linear-gradient(90deg,#e9653f,#f2c563); border-radius:8px; }.month-row strong { text-align:right; font:13px Georgia,serif; }
+.income-matrix-wrap { overflow-x:auto; padding-bottom:4px; }.income-matrix { min-width:920px; }.income-matrix th:not(:first-child),.income-matrix td:not(:first-child) { text-align:right; }.income-matrix th:first-child { min-width:135px; }.income-matrix td { padding:13px 12px; font-size:10px; }.income-matrix td:first-child strong { font-size:11px; }.income-matrix td:first-child small { display:inline-block; margin-left:6px; padding:3px 6px; border-radius:8px; background:#fff1df; color:#a56825; font-size:8px; }.income-matrix .total-row { background:#f6f3ec; }.income-matrix .total-row td { border-top:2px solid #ddd6c9; color:#24221f; }
+.money-input { width:84px; border:1px solid transparent; background:#f8fbff; color:#172033; border-radius:6px; padding:7px 8px; text-align:right; font-size:10px; outline:none; }
+.money-input:focus { border-color:#2563eb; background:#fff; box-shadow:0 0 0 3px #2563eb14; }
+.allowance-section { display:grid; grid-template-columns:1.05fr 1fr 1.2fr; margin-top:18px; background:#292824; color:#fff; border-radius:14px; overflow:hidden; box-shadow:0 12px 30px #25231f14; }.allowance-main,.allowance-calc { padding:24px 26px; border-right:1px solid #48463f; }.allowance-section p { margin:0 0 10px; color:#c4c0b7; font-size:10px; }.allowance-section strong { display:block; font:25px Georgia,serif; color:#f1c65c; }.allowance-section span { color:#8f8b82; font-size:9px; }.allowance-calc strong { color:#fff; }.allowance-list { padding:14px 20px; display:grid; }.allowance-list div { display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid #45433d; }.allowance-list div:last-child { border-bottom:0; }.allowance-list strong { font-size:13px; color:#fff; }
+.job-detail-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:16px; }.job-detail-card { background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden; }.job-detail-head { display:grid; grid-template-columns:8px 1fr auto; gap:13px; align-items:center; padding:20px; }.job-detail-head>i { height:42px; border-radius:5px; }.job-detail-head h2 { margin:0 0 4px; font:20px Georgia,"Yu Mincho",serif; }.job-detail-head p { color:var(--muted); margin:0; font-size:10px; }.job-detail-head>span { padding:5px 8px; border-radius:12px; font-size:9px; font-weight:700; }.included { color:#267859; background:#eaf6f1; }.excluded { color:#a56825; background:#fff1df; }
+.job-detail-card dl { margin:0; padding:0 20px 17px; display:grid; grid-template-columns:1fr 1fr; gap:9px; }.job-detail-card dl div { background:#f8f7f4; padding:11px; border-radius:8px; }.job-detail-card dt { color:#98928a; font-size:9px; margin-bottom:4px; }.job-detail-card dd { margin:0; font-size:12px; font-weight:700; }.job-detail-card footer { border-top:1px solid var(--line); padding:15px 20px; display:flex; justify-content:space-between; align-items:center; }.job-detail-card footer span { color:var(--muted); font-size:10px; }.job-detail-card footer strong { font:18px Georgia,serif; }
+.job-detail-card dl div.wide { grid-column:1 / -1; }
+.inline-edit-button { width:100%; border:1px solid transparent; background:transparent; color:var(--ink); text-align:left; padding:6px 7px; margin:-6px -7px; border-radius:6px; font-weight:700; }
+.inline-edit-button:hover,.inline-edit-button.unset { border-color:#bfdbfe; background:#eff6ff; color:#1d4ed8; }
+.inline-edit-input,.inline-edit-select { width:100%; min-height:31px; border:1px solid #d8d3ca; background:#fff; color:var(--ink); border-radius:6px; padding:6px 8px; font-size:12px; font-weight:700; outline:none; }
+.inline-edit-input:focus,.inline-edit-select:focus { border-color:#2563eb; box-shadow:0 0 0 3px #2563eb18; }
+.info-note { margin-top:16px; padding:16px 19px; background:#fff8e9; border:1px solid #efddb5; border-radius:10px; display:flex; gap:18px; font-size:11px; color:#73634b; }.info-note b { color:#9d681d; white-space:nowrap; }
+.calendar-layout { display:grid; grid-template-columns:minmax(0,1fr) 285px; gap:17px; }.calendar-panel,.event-detail { background:#fff; border:1px solid var(--line); border-radius:14px; }.calendar-head { height:64px; display:flex; align-items:center; justify-content:space-between; padding:0 18px; border-bottom:1px solid var(--line); }.calendar-head h2 { margin:0; font:20px Georgia,"Yu Mincho",serif; }.calendar-head button { border:0; background:#f5f3ef; border-radius:7px; width:31px; height:31px; color:#777; }
+.sync-strip { margin:-12px 0 18px; padding:14px 16px; border:1px solid #bfdbfe; background:#eff6ff; border-radius:10px; display:flex; justify-content:space-between; align-items:center; gap:16px; }
+.sync-strip strong { display:block; font-size:13px; }
+.sync-strip span { color:#53657d; font-size:11px; }
+.sync-actions { display:flex; gap:8px; align-items:center; }
+.time-edit-row { display:grid; grid-template-columns:1fr 1fr; gap:10px; margin:16px 0 6px; }
+.time-edit-row label { color:#64748b; font-size:10px; font-weight:700; display:grid; gap:5px; }
+.time-edit-row input { border:1px solid #d8e2f0; border-radius:7px; padding:8px; color:#172033; outline:none; }
+.time-edit-row input:focus { border-color:#2563eb; box-shadow:0 0 0 3px #2563eb18; }
+.event-edit-field { display:grid; gap:5px; color:#64748b; font-size:10px; font-weight:700; margin-top:10px; }
+.event-edit-field input,.event-edit-field select { border:1px solid #d8e2f0; border-radius:7px; padding:8px; color:#172033; outline:none; width:100%; }
+.event-edit-field input:focus,.event-edit-field select:focus { border-color:#2563eb; box-shadow:0 0 0 3px #2563eb18; }
+.weekdays,.calendar-grid { display:grid; grid-template-columns:repeat(7,1fr); }.weekdays span { text-align:center; color:#9a958d; font-size:9px; padding:10px 0; border-bottom:1px solid var(--line); }.calendar-day { min-height:102px; padding:8px; border-right:1px solid #efede8; border-bottom:1px solid #efede8; }.calendar-day:nth-child(7n) { border-right:0; }.calendar-day b { width:24px; height:24px; display:grid; place-items:center; font-size:10px; }.calendar-day.today b { background:#292824; color:#fff; border-radius:50%; }.calendar-day.outside { background:#faf9f6; }
+.green-event { width:100%; margin-top:4px; border:0; border-left:3px solid #2d9c70; background:#e8f6ef; color:#277758; text-align:left; padding:6px; border-radius:5px; font-size:9px; overflow:hidden; }.green-event span { display:block; font-size:8px; color:#5d987e; margin-bottom:2px; }.green-event:hover { background:#d9f0e4; }
+.event-detail { padding:24px; align-self:start; }.event-dot { display:block; width:13px; height:13px; border-radius:50%; background:#51b749; margin:25px 0 13px; box-shadow:0 0 0 6px #51b74920; }.event-detail h2 { margin:0 0 8px; font:21px/1.4 Georgia,"Yu Mincho",serif; }.event-detail>p:not(.eyebrow) { color:var(--muted); font-size:11px; }.event-detail dl { margin:22px 0; border-top:1px solid var(--line); }.event-detail dl div { display:flex; justify-content:space-between; padding:11px 0; border-bottom:1px solid var(--line); font-size:10px; }.event-detail dt { color:#969088; }.event-detail dd { margin:0; font-weight:700; }.event-detail .primary { width:100%; margin-top:4px; font-size:10px; }.event-detail .primary:disabled { opacity:.5; cursor:not-allowed; transform:none; }.event-detail>small { display:block; color:#99938b; font-size:9px; text-align:center; line-height:1.6; margin-top:10px; }
+.planned-income-panel { margin-top:16px; background:#fff; border:1px solid var(--line); border-radius:14px; padding:20px; }
+.planned-income-head { display:flex; align-items:end; justify-content:space-between; gap:16px; margin-bottom:14px; }
+.planned-income-head h2 { margin:0; font:21px Georgia,"Yu Mincho",serif; }
+.planned-income-head>span { background:#e8f6ef; color:#277758; border-radius:20px; padding:7px 11px; font-size:10px; font-weight:700; white-space:nowrap; }
+.planned-income-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+.planned-income-grid article { border:1px solid #efede8; border-radius:10px; padding:16px 18px; background:#fcfbf8; }
+.planned-income-grid small { display:block; color:#918c84; font-size:10px; font-weight:700; margin-bottom:7px; }
+.planned-income-grid strong { display:block; font:24px Georgia,serif; }
+.planned-income-grid p { color:var(--muted); font-size:10px; margin:7px 0 0; }
+.integration-panel { margin-top:16px; background:#fff; border:1px solid var(--line); border-radius:14px; overflow:hidden; }
+.integration-grid { display:grid; grid-template-columns:repeat(4,1fr); gap:0; border-top:1px solid var(--line); }
+.integration-grid article { padding:16px; border-right:1px solid var(--line); background:#fbfdff; }
+.integration-grid article:last-child { border-right:0; }
+.integration-grid strong { display:block; font-size:12px; margin-bottom:7px; }
+.integration-grid span { display:block; color:#64748b; font-size:10px; line-height:1.7; }
+.mini-action { margin-top:10px; border:1px solid #bfdbfe; background:#eff6ff; color:#1d4ed8; border-radius:7px; padding:7px 10px; font-size:10px; font-weight:700; }
+.mini-action:hover { background:#dbeafe; }
+.timey-form { border-top:1px solid var(--line); padding:16px; background:#fbfdff; }
+.timey-form form { display:grid; grid-template-columns:1.2fr .7fr 1.2fr auto; gap:10px; align-items:center; }
+.timey-form input { border:1px solid #d8e2f0; border-radius:7px; padding:10px 11px; font-size:11px; outline:none; }
+.timey-list { display:grid; grid-template-columns:repeat(3,1fr); gap:10px; margin-top:12px; }
+.timey-list div { border:1px solid #dbe6f4; border-radius:9px; background:#fff; padding:12px; }
+.timey-list strong { display:block; font-size:12px; margin-bottom:5px; }
+.timey-list span { color:#64748b; font-size:10px; }
+.calendar-summary { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; margin-top:16px; }.calendar-summary>div { background:#fff; border:1px solid var(--line); border-radius:10px; padding:16px 18px; }.calendar-summary strong { display:block; font:20px Georgia,serif; }.calendar-summary span { color:var(--muted); font-size:9px; }
+.login-page { min-height:100vh; display:grid; grid-template-columns:1.05fr .95fr; background:#f7f5ef; }
+.login-copy { position:relative; overflow:hidden; padding:48px 9vw 42px; display:flex; flex-direction:column; justify-content:space-between; color:#f8fbff; background:#102346; }
+.login-copy::after { content:"¥"; position:absolute; right:-65px; bottom:-150px; font:430px Georgia,serif; color:#ffffff05; transform:rotate(-8deg); }
+.login-brand { color:white; text-decoration:none; font:23px Georgia,serif; }.login-brand span { display:inline-grid; place-items:center; width:32px; height:32px; border-radius:50%; background:#3b82f6; color:#fff; margin-right:7px; }
+.login-copy h1 { font:46px/1.35 Georgia,"Yu Mincho",serif; letter-spacing:2px; margin:8px 0 22px; }.login-copy>div>p:last-child { color:#aaa69d; font-size:13px; line-height:2; }
+.login-features { display:flex; flex-wrap:wrap; gap:20px; color:#cfcbc2; font-size:11px; }.login-features b { display:inline-grid; place-items:center; background:#3d3c36; color:#efc65e; width:20px; height:20px; border-radius:50%; margin-right:5px; }.login-copy>small { color:#69665f; font-size:9px; }
+.login-box-wrap { display:grid; place-items:center; padding:30px; }.login-box { width:min(390px,100%); text-align:center; background:#fff; padding:45px 42px; border:1px solid #e5e1da; border-radius:16px; box-shadow:0 24px 60px #39352d12; }
+.login-mark { width:54px; height:54px; margin:0 auto 24px; display:grid; place-items:center; background:#3b82f6; color:#fff; border-radius:50%; font:26px Georgia,serif; }.login-box h2 { margin:3px 0 12px; font:31px Georgia,"Yu Mincho",serif; }.login-box>p:not(.eyebrow):not(.login-security) { color:#817c74; font-size:11px; line-height:1.9; }
+.chatgpt-login { margin:28px 0 18px; display:flex; align-items:center; justify-content:center; gap:9px; background:#292824; color:#fff; text-decoration:none; border-radius:9px; padding:14px; font-size:13px; font-weight:700; transition:.15s; }.chatgpt-login:hover { background:#3a3934; transform:translateY(-1px); }.chatgpt-login span { color:#f1c65c; font-size:18px; }
+.login-security { color:#a19c94; font-size:9px; }
+@media (max-width:900px) { .app-shell { display:block; }.sidebar { position:static; width:auto; height:auto; padding:17px 20px; flex-direction:row; align-items:center; }.brand { padding:0; }.sidebar nav { display:flex; margin-left:auto; }.sidebar nav button { width:auto; font-size:0; }.sidebar nav button span { font-size:17px; width:auto; }.job-list,.side-account { display:none; }.content { width:calc(100% - 30px); padding:25px 0 50px; }.hero-card { grid-template-columns:1fr 110px; }.hero-detail { display:none; }.metrics { grid-template-columns:1fr; }.panel-head { align-items:start; gap:15px; flex-direction:column; }.allowance-section { grid-template-columns:1fr; }.allowance-main,.allowance-calc { border-right:0; border-bottom:1px solid #48463f; }.allowance-list { min-height:210px; }.job-detail-grid { grid-template-columns:1fr; }.calendar-layout { grid-template-columns:1fr; }.event-detail { display:block; }.planned-income-grid,.integration-grid,.timey-list { grid-template-columns:1fr; }.timey-form form { grid-template-columns:1fr; }.integration-grid article { border-right:0; border-bottom:1px solid var(--line); }.integration-grid article:last-child { border-bottom:0; }.sync-strip { align-items:flex-start; flex-direction:column; }.sync-actions { width:100%; }.login-page { grid-template-columns:1fr; }.login-copy { min-height:43vh; padding:32px 8vw; }.login-copy h1 { font-size:35px; }.login-features,.login-copy>small { display:none; }.login-box-wrap { padding:28px 20px 45px; } }
+@media (max-width:560px) { header { align-items:flex-start; gap:20px; } header h1 { font-size:25px; }.primary { padding:11px 13px; }.hero-card { padding:25px; grid-template-columns:1fr; }.hero-card>div:first-child>strong { font-size:34px; }.progress-ring { display:none; }.form-grid { grid-template-columns:1fr; } }

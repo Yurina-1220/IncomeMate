@@ -1,0 +1,21 @@
+{
+  "name": "IncomeMate",
+  "short_name": "IncomeMate",
+  "description": "バイトの予定、収入、タイミー案件履歴をまとめて管理します。",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "background_color": "#f6f9ff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["finance", "productivity", "utilities"],
+  "lang": "ja"
+}
