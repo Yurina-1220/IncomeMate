@@ -1,6 +1,6 @@
 # IncomeMate Tasks
 
-Last updated: 12.Aug.2026
+Last updated: 18.Aug.2026
 
 IncomeMateの作業を細かく分けて管理するページです。
 
@@ -18,19 +18,19 @@ IncomeMateの作業を細かく分けて管理するページです。
 ## Supabase
 
 - [x] Supabaseプロジェクトを作成する
-- [ ] SQL Editorを開く
-- [ ] `incomemate_snapshots`テーブルを作成する
-- [ ] `SUPABASE_URL`を確認する
-- [ ] `SUPABASE_SERVICE_ROLE_KEY`を`.env`に設定する
-- [ ] Supabase保存エラーの原因を確認する
-- [ ] Supabase保存テストを行う
+- [x] SQL Editorを開く
+- [x] `incomemate_snapshots`テーブルを作成する
+- [x] `SUPABASE_URL`を確認する
+- [x] `SUPABASE_SERVICE_ROLE_KEY`を`.env`に設定する
+- [x] Supabase保存エラーの原因を確認する
+- [x] Supabase保存テストを行う
 
 ## PC Setup
 
-- [ ] IncomeMateをローカルで起動する
-- [ ] `http://localhost:3000/`を開く
-- [ ] ローカルログインを確認する
-- [ ] データを入力して保存されるか確認する
+- [x] IncomeMateをローカルで起動する
+- [x] `http://localhost:3000/`を開く
+- [x] ローカルログインを確認する
+- [x] テスト値を入力して保存・再読み込みできるか確認する
 
 ## Smartphone
 
@@ -50,7 +50,7 @@ IncomeMateの作業を細かく分けて管理するページです。
 
 ## 現在の優先順位
 
-1. Supabase保存エラーの原因を確認する
-2. Supabaseのテーブルと環境変数を確認する
-3. PCでクラウド保存をテストする
-4. スマートフォン表示と同期の確認に進む
+1. スマートフォンでIncomeMateを開く
+2. ホーム画面に追加する
+3. PCとスマートフォンで同じデータが見えるか確認する
+4. Supabase AuthとRLSによるデータ分離を設計する
