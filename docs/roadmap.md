@@ -13,12 +13,12 @@
 
 ## 次にやること
 
-1. Supabase SQL Editorで `incomemate_snapshots` テーブルを作る
-2. `.env` にSupabase接続情報を設定
-3. PCで保存テスト
-4. スマホでホーム画面追加
-5. PCとスマホで同期確認
-6. GitHubへ初回push
+1. Supabase SQL Editorで `incomemate_snapshots` テーブルを確認する
+2. `.env` のSupabase接続情報を確認する
+3. PCで保存・読み込みテストを行う
+4. スマホでホーム画面に追加する
+5. PCとスマホで同期を確認する
+6. Googleログインとデータ分離を設計する
 
 ## 将来やりたいこと
 
@@ -28,3 +28,5 @@
 - 通知機能
 - スマホ用ホーム画面の改善
 - 本格的なネイティブアプリ化
+- TestFlight / Google Playのテスト配布
+- 一般公開前のプライバシー説明とデータ削除機能

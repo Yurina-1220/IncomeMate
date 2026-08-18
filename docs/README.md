@@ -11,6 +11,8 @@ IncomeMateの説明書・設計メモ・作業ログをまとめるフォルダ�
 | `setup.md` | PCで動かすための基本セットアップ |
 | `incomemate-setup-guide.md` | 初心者向けの詳しいセットアップ手順 |
 | `security.md` | `.env`や秘密キーなど、セキュリティ上の注意 |
+| `glossary.md` | IncomeMate・開発・GitHub・Supabaseの用語集 |
+| `development-guide.md` | 開発の進め方、バージョン管理、公開までの流れ |
 
 ## 機能ごとの説明
 
@@ -27,6 +29,7 @@ IncomeMateの説明書・設計メモ・作業ログをまとめるフォルダ�
 | ファイル | 内容 |
 |---|---|
 | `logs/2.Aug.2026.md` | 2026年8月2日の作業ログ |
+| `logs/11.Aug.2026.md` | 2026年8月11日の作業ログ |
 
 ## ファイル名のルール
 
